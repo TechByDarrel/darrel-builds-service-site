@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxe Beauty Studio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff7fb;
+      color: #2d1b2e;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(255,247,251,0.78), rgba(255,247,251,0.85)),
+        url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=80') center/cover;
+      padding: 30px 8%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 85px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #be185d;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #6b4d62;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      margin: auto 0;
+      background: rgba(255,255,255,0.55);
+      padding: 35px;
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+    }
+
+    .top {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #db2777;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .desc {
+      color: #6e5b69;
+      max-width: 620px;
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ec4899, #db2777);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid #db2777;
+      color: #db2777;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: #db2777;
+      color: white;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      text-align: center;
+      color: #6e5b69;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .services,
+    .pricing,
+    .gallery,
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #db2777;
+    }
+
+    .service-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .service-body {
+      padding: 22px;
+    }
+
+    .price-tag {
+      margin-top: 14px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #be185d;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #fbcfe8, #f9a8d4);
+      padding: 55px 24px;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 620px;
+      margin: 0 auto 22px;
+      color: #5f4759;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid #f2d3e5;
+      color: #7d6676;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .hero-content {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Luxe Beauty</div>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Book</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="top">Beauty • Glam • Confidence</p>
+      <h1>Beauty that feels elegant, premium, and unforgettable.</h1>
+      <p class="desc">
+        A polished salon website demo for hairstylists, makeup artists, lash techs, spa owners, and beauty brands that want more bookings.
+      </p>
+      <div class="btn-group">
+        <a href="#services" class="btn btn-primary">View Services</a>
+        <a href="#contact" class="btn btn-secondary">Book Appointment</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-text">
+      This layout helps beauty brands present their services clearly and look premium online.
+    </p>
+    <div class="services">
+      <div class="card service-card">
+        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Hair styling">
+        <div class="service-body">
+          <h3>Hair Styling</h3>
+          <p>Wig installation, braid styling, treatment, and premium hair care.</p>
+        </div>
+      </div>
+
+      <div class="card service-card">
+        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Makeup session">
+        <div class="service-body">
+          <h3>Makeup Sessions</h3>
+          <p>Soft glam, bridal glam, birthday looks, and special event beauty.</p>
+        </div>
+      </div>
+
+      <div class="card service-card">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=80" alt="Lash extensions">
+        <div class="service-body">
+          <h3>Nails & Lashes</h3>
+          <p>Classic lashes, full sets, nail care, and finishing beauty touches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Why clients choose us</h2>
+    <div class="benefits">
+      <div class="card">
+        <h3>Luxury Experience</h3>
+        <p>From first impression to final result, everything feels polished and premium.</p>
+      </div>
+      <div class="card">
+        <h3>Clean Branding</h3>
+        <p>A strong online look helps customers trust your beauty business faster.</p>
+      </div>
+      <div class="card">
+        <h3>Easy Booking</h3>
+        <p>Clients can contact you quickly for appointments and service details.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Sample Pricing</h2>
+    <p class="section-text">
+      Replace these with your client’s actual beauty services and prices.
+    </p>
+    <div class="pricing">
+      <div class="card">
+        <h3>Silk Press</h3>
+        <p>Beautiful smooth finishing for a sleek premium look.</p>
+        <div class="price-tag">₦12,000</div>
+      </div>
+      <div class="card">
+        <h3>Frontal Wig Install</h3>
+        <p>Clean install with styling and finishing touches.</p>
+        <div class="price-tag">₦18,000</div>
+      </div>
+      <div class="card">
+        <h3>Soft Glam Makeup</h3>
+        <p>Elegant makeup for birthdays, weddings, and events.</p>
+        <div class="price-tag">₦15,000</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Beauty Gallery</h2>
+    <p class="section-text">
+      Beautiful visuals can instantly increase trust and booking interest.
+    </p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=80" alt="Makeup">
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=80" alt="Salon">
+      <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80" alt="Beauty service">
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta">
+      <h2>Ready for your next appointment?</h2>
+      <p>
+        Book your session today and let your beauty brand stand out with a polished, elegant online presence.
+      </p>
+      <a href="#" class="btn btn-primary">Book Now</a>
+    </div>
+  </section>
+
+  <footer>
+    Luxe Beauty Studio • 12 Beauty Avenue, Ikeja • +234 800 000 0000
+  </footer>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Spoon Restaurant</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(4, 8, 20, 0.72), rgba(4, 8, 20, 0.78)),
+        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80') center/cover;
+      padding: 30px 8%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 90px;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #facc15;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #e5e7eb;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: auto 0;
+    }
+
+    .hero-content p.top {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #facc15;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero-content h1 {
+      font-size: 3.7rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p.desc {
+      color: #d1d5db;
+      max-width: 620px;
+      margin-bottom: 30px;
+      font-size: 1.05rem;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #facc15;
+      color: #111827;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: #facc15;
+      color: #facc15;
+    }
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.3rem;
+      margin-bottom: 12px;
+    }
+
+    .section-text {
+      text-align: center;
+      color: #cbd5e1;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+
+    .features,
+    .menu-grid,
+    .gallery,
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, #111827, #0f172a);
+      padding: 28px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #facc15;
+    }
+
+    .menu-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .menu-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .menu-body {
+      padding: 22px;
+    }
+
+    .menu-card .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #facc15;
+      margin: 14px 0 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, #facc15, #f59e0b);
+      color: #111827;
+      border-radius: 22px;
+      text-align: center;
+      padding: 55px 25px;
+    }
+
+    .cta h2 {
+      font-size: 2.1rem;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Golden Spoon</div>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <p class="top">Fine Dining Experience</p>
+      <h1>Fresh meals, warm atmosphere, unforgettable taste.</h1>
+      <p class="desc">
+        A modern restaurant website demo for food brands, lounges, and restaurants that want to attract more customers and look premium online.
+      </p>
+      <div class="btn-group">
+        <a href="#menu" class="btn btn-primary">View Menu</a>
+        <a href="#contact" class="btn btn-secondary">Book a Table</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="section-title">Why customers love us</h2>
+    <p class="section-text">
+      This layout is great for restaurants that want to showcase their meals, environment, and booking options professionally.
+    </p>
+    <div class="features">
+      <div class="card">
+        <h3>Fresh Ingredients</h3>
+        <p>Every meal is prepared with quality ingredients and attention to taste.</p>
+      </div>
+      <div class="card">
+        <h3>Cozy Space</h3>
+        <p>A warm and stylish dining experience for families, couples, and hangouts.</p>
+      </div>
+      <div class="card">
+        <h3>Easy Reservations</h3>
+        <p>Customers can quickly contact you for table bookings and special events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <h2 class="section-title">Popular Menu</h2>
+    <p class="section-text">
+      Replace these items with your client’s real meals, prices, and categories.
+    </p>
+    <div class="menu-grid">
+      <div class="card menu-card">
+        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80" alt="Jollof rice">
+        <div class="menu-body">
+          <h3>Jollof Rice & Chicken</h3>
+          <p>Smoky party jollof served with grilled chicken and salad.</p>
+          <div class="price">₦6,000</div>
+        </div>
+      </div>
+
+      <div class="card menu-card">
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Seafood pasta">
+        <div class="menu-body">
+          <h3>Seafood Pasta</h3>
+          <p>Creamy pasta with shrimp, herbs, and rich house seasoning.</p>
+          <div class="price">₦8,500</div>
+        </div>
+      </div>
+
+      <div class="card menu-card">
+        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=80" alt="Burger and fries">
+        <div class="menu-body">
+          <h3>Beef Burger Combo</h3>
+          <p>Juicy burger served with fries and a chilled drink.</p>
+          <div class="price">₦5,500</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2 class="section-title">Restaurant Gallery</h2>
+    <p class="section-text">
+      Strong visuals help people trust your restaurant before they even visit.
+    </p>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80" alt="Restaurant interior">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Food plate">
+      <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=900&q=80" alt="Dining space">
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">What guests say</h2>
+    <div class="reviews">
+      <div class="card">
+        <h3>Amazing food</h3>
+        <p>“The meals were excellent and the environment was beautiful.”</p>
+      </div>
+      <div class="card">
+        <h3>Great experience</h3>
+        <p>“Perfect place for dinner and small celebrations.”</p>
+      </div>
+      <div class="card">
+        <h3>Highly recommended</h3>
+        <p>“Fast service, tasty food, and a very clean space.”</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="cta">
+      <h2>Ready to reserve a table?</h2>
+      <p>
+        Open daily from 10AM to 10PM. Contact us for reservations, birthdays, dinner dates, and private events.
+      </p>
+      <a href="#" class="btn btn-secondary" style="border-color:#111827; color:#111827;">Contact Restaurant</a>
+    </div>
+  </section>
+
+  <footer>
+    Golden Spoon Restaurant • 14 Admiralty Way, Lekki • +234 800 000 0000
+  </footer>
+</body>
+</html>
