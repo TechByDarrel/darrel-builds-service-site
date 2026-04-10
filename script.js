@@ -145,14 +145,19 @@ function setupFAQ() {
   faqQuestions.forEach((button) => {
     button.addEventListener("click", () => {
       const item = button.closest(".faq-item");
+      const answerWrap = item.querySelector(".faq-answer-wrap");
+      const answer = item.querySelector(".faq-answer");
       const isActive = item.classList.contains("active");
 
       faqItems.forEach((faq) => {
         faq.classList.remove("active");
+        const wrap = faq.querySelector(".faq-answer-wrap");
+        wrap.style.maxHeight = "0px";
       });
 
       if (!isActive) {
         item.classList.add("active");
+        answerWrap.style.maxHeight = answer.offsetHeight + "px";
       }
     });
   });
