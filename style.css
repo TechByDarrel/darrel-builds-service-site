@@ -853,14 +853,20 @@ footer {
 
 /* ---------- PHONE ---------- */
 @media (max-width: 768px) {
-  body {
-    font-size: 15px;
-  }
-
   .hero {
-    padding: 18px 6%;
-    min-height: auto;
+    padding: 80px 6% 40px; /* smaller vertical space */
   }
+}
+
+.hero {
+  position: relative;
+  min-height: auto;   /* 🔥 FIX: remove forced full height */
+  padding: 100px 8% 60px; /* desktop spacing */
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(2, 6, 23, 0.88), rgba(5, 8, 22, 0.85)),
+    url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+}
 
   .navbar {
     flex-direction: column;
